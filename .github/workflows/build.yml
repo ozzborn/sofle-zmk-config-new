@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/upload-artifact@v4
         with:
           path: 'config'
 
@@ -39,7 +39,7 @@ jobs:
         run: mv build/zephyr/zmk.uf2 build/zephyr/${{ matrix.shield }}_${{ matrix.board }}.uf2
 
       - name: Archive firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firmware-${{ matrix.board }}-${{ matrix.shield }}
           path: build/zephyr/${{ matrix.shield }}_${{ matrix.board }}.uf2
