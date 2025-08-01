@@ -32,6 +32,9 @@ jobs:
       - name: West Update
         run: west update
 
+      - name: West Zephyr export
+        run: west zephyr-export
+
       - name: West Build
         run: |
           cd zmk/app
