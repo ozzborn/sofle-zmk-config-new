@@ -22,12 +22,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/upload-artifact@v4
-        with:
-          path: 'config'
+        uses: actions/checkout@v4
 
       - name: West Init
-        run: west init -l config
+        run: west init
 
       - name: West Update
         run: west update
