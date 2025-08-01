@@ -1,0 +1,7 @@
+# See the following link for more information about the build.yaml
+# file and the various options available.
+# https://zmk.dev/docs/development/build-files
+
+include:
+  - board: nice_nano_v2
+    shield: sofle_left sofle_right
