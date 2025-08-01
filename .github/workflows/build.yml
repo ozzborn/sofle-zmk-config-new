@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: West Init
-        run: west init
+        run: west init -l config
 
       - name: West Update
         run: west update
