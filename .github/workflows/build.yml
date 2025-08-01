@@ -24,8 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Clone ZMK
-        run: git clone --depth=1 https://github.com/zmkfirmware/zmk.git zmk
+      - name: Initialize West Workspace
+        run: west init -l config
+
+      - name: West Update
+        run: west update
 
       - name: West Build
         run: west build -b ${{ matrix.board }} -s zmk/app -- -DSHIELD=${{ matrix.shield }}
