@@ -24,8 +24,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Initialize West Workspace
-        run: west init -l config
+      - name: West Init
+        run: west init
 
       - name: West Update
         run: west update
