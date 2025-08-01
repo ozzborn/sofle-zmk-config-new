@@ -31,7 +31,7 @@ jobs:
         run: west update
 
       - name: West Build
-        run: west build -b ${{ matrix.board }} -s config/zmk/app -- -DSHIELD=${{ matrix.shield }}
+        run: west build -b ${{ matrix.board }} -s zmk/app -- -DSHIELD=${{ matrix.shield }}
 
       - name: Rename firmware
         run: mv build/zephyr/zmk.uf2 build/zephyr/${{ matrix.shield }}_${{ matrix.board }}.uf2
