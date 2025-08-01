@@ -23,9 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: 'config'
 
       - name: West Init
-        run: west init
+        run: west init -l config
 
       - name: West Update
         run: west update
@@ -37,8 +39,8 @@ jobs:
 
       - name: Rename firmware
         run: |
-          cd zmk/app
-          mv build/zephyr/zmk.uf2 build/zephyr/${{ matrix.shield }}_${{ matrix.board }}.uf2
+          cd zmk/app/build/zephyr
+          mv zmk.uf2 ${{ matrix.shield }}_${{ matrix.board }}.uf2
 
       - name: Archive firmware
         uses: actions/upload-artifact@v4
