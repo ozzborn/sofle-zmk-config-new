@@ -1,0 +1,18 @@
+# west.yml
+#
+# This file is used by the west meta-tool to manage ZMK dependencies.
+# It must be located in the root of your configuration repository.
+#
+# For more information, see https://zmk.dev/docs/development/build-files
+
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
