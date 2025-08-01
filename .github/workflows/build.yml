@@ -11,6 +11,3 @@ on:
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
-    with:
-      board: nice_nano_v2
-      shields: sofle_left sofle_right
